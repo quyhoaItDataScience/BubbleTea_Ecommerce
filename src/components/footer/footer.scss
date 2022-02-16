@@ -1,0 +1,47 @@
+@use "../../scss" as *;
+
+.footer {
+  background: url("https://images.unsplash.com/photo-1572932759882-bb34c848d1b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnViYmxlJTIwdGVhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 200rem rgba($color: $darker-pink, $alpha: 0.3);
+  height: 40vh;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    .footer__logo {
+      @include flex(center, center);
+      height: 100%;
+      &__text {
+        font-size: 4rem;
+        color: $primary-color;
+      }
+    }
+    .footer__title {
+      font-size: 3rem;
+      text-transform: capitalize;
+      color: $darker-pink;
+      font-weight: 700;
+
+      margin: 2rem 0;
+    }
+  }
+  &__list {
+    @include flex(center, flex-start);
+    flex-direction: column;
+    gap: 2rem;
+    &__item {
+      font-size: 2rem;
+      text-transform: capitalize;
+      color: $white;
+      a {
+        color: $darker-pink;
+      }
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

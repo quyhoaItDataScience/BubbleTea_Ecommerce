@@ -1,0 +1,25 @@
+@use "../../scss" as *;
+
+.products {
+  padding: 5rem 0;
+  &__title {
+    margin-bottom: 2rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem 2rem;
+    @media (max-width: 875px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__title {
+    text-align: center;
+    font-size: $fsize-heading;
+    text-transform: capitalize;
+    color: $primary-color;
+  }
+}

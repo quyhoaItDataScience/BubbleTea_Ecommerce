@@ -1,0 +1,34 @@
+@use "../../scss" as *;
+.hero {
+  background: url("https://images.pexels.com/photos/6412840/pexels-photo-6412840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+  box-shadow: inset 0 0 0 100rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 65rem;
+  }
+  &__sub {
+    font-size: 3.6rem;
+    color: $lighter-pink;
+    margin-bottom: 0.5rem;
+  }
+  &__title {
+    font-size: 6rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+  &__desc {
+    color: $lighter-pink;
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 1.6rem;
+  }
+}

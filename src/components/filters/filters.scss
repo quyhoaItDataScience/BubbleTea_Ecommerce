@@ -1,0 +1,13 @@
+@use "../../scss" as *;
+
+.filters {
+  &__directory {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: $brown;
+    span {
+      color: $primary-color;
+    }
+  }
+}

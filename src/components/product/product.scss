@@ -1,0 +1,37 @@
+@use "../../scss" as *;
+.product {
+  border: 3px solid $lighter-pink;
+  transition: all 0.2s linear;
+  &__img {
+    text-align: center;
+    img {
+      width: 26rem;
+    }
+  }
+  &__info {
+    text-align: center;
+    padding: 1rem;
+    background-color: azure;
+    position: relative;
+    &__name {
+      font-size: 1.8rem;
+      text-transform: capitalize;
+      color: $darker-pink;
+      margin-bottom: 1rem;
+    }
+    &__price {
+      color: $brown;
+      font-size: 1.8rem;
+    }
+  }
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba($color: $dark, $alpha: 0.4);
+    .btn-details {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

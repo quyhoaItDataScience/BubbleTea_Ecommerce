@@ -1,0 +1,77 @@
+@use "../../scss" as *;
+
+.news {
+  padding: 5rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0 2rem;
+  &__left {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem 1rem;
+    &__post {
+      border: 3px solid $primary-color;
+      &__img {
+        height: 50%;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__content {
+        padding: 1rem;
+        background-color: rgba($color: $brown, $alpha: 0.8);
+        height: 50%;
+      }
+      &__title {
+        font-size: 2rem;
+        color: $darker-pink;
+        line-height: 1.3;
+        margin: 1rem 0;
+      }
+      &__text {
+        font-size: 1.6rem;
+        color: $lighter-pink;
+
+        display: -webkit-box;
+        overflow: hidden;
+
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    &__post:first-child {
+      grid-column: 1 / span 2;
+    }
+  }
+  &__right {
+    &__post {
+      border: 3px solid $primary-color;
+      display: flex;
+      height: 20rem;
+      &__img {
+        margin-right: 1rem;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__content {
+        margin-top: 3rem;
+      }
+      &__title {
+        font-size: 2rem;
+        color: $primary-color;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+      }
+      &__text {
+        font-size: 1.6rem;
+        color: $brown;
+      }
+    }
+  }
+}

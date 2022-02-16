@@ -1,0 +1,22 @@
+@use "../../scss" as *;
+
+.sort {
+  text-align: end;
+  @include flex(flex-end, center);
+  margin-bottom: 3rem;
+  &__result {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $brown;
+  }
+  form {
+    margin-left: 1rem;
+    select {
+      text-transform: capitalize;
+      font-size: 1.6rem;
+      option {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

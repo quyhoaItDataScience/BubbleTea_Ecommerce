@@ -1,0 +1,49 @@
+@use "./scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background-color: $primary-color;
+  color: $white;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: $font-family;
+  line-height: 1;
+  position: relative;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+.container {
+  max-width: 1144px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 999;
+  background-color: rgba($color: #000, $alpha: 0.3);
+}
+.close-icon {
+}

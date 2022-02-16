@@ -1,0 +1,47 @@
+@use "../../scss" as *;
+.btn {
+  padding: 1.4rem 2rem;
+  background-color: $primary-color;
+  border: none;
+  outline: none;
+  color: $lighter-pink;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s linear;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.btn-details {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translate(-50%, 1rem);
+  opacity: 0;
+  transition: all 0.2s linear;
+
+  font-size: 1.6rem;
+  color: $brown;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+}
+.btn-add {
+  padding: 1rem 2rem;
+  background-color: $primary-color;
+  border: none;
+  outline: none;
+  color: $lighter-pink;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s linear;
+  &:hover {
+    background-color: $darker-pink;
+  }
+}
