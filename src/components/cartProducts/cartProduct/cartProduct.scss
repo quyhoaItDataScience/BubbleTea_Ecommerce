@@ -1,0 +1,47 @@
+@use "../../../scss/" as *;
+
+.cart-product {
+  @include flex(none, center);
+  &__info {
+    @include flex(none, center);
+    flex: 0.3;
+    &__img {
+      width: 100px;
+      object-fit: cover;
+    }
+    &__name {
+      font-size: 1.6rem;
+      color: $brown;
+      font-weight: 600;
+    }
+  }
+  & > *:not(:first-child) {
+    flex: calc(0.7 / 3);
+  }
+  &__price-item {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $brown;
+    margin-left: 1rem;
+  }
+  &__total-items {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $brown;
+    text-align: center;
+  }
+  &__total-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $brown;
+    text-align: end;
+  }
+}
+.removeItem-icon {
+  color: $lighter-pink;
+  background-color: $darker-pink;
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 50%;
+  cursor: pointer;
+}

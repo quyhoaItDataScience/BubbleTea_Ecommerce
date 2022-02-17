@@ -2,12 +2,62 @@
 
 .filters {
   &__directory {
-    font-size: 2rem;
+    font-size: 2.6rem;
     font-weight: 600;
     text-transform: capitalize;
     color: $brown;
+    display: block;
+    margin-bottom: 2rem;
     span {
       color: $primary-color;
     }
+  }
+  &__form-control {
+    color: $brown;
+    margin: 2rem 0;
+    label:first-child {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      & + input {
+        padding: 0.5rem 1rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  &__category {
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    &__list {
+      font-size: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      color: $primary-color;
+      text-transform: capitalize;
+      cursor: pointer;
+      &__item {
+        transition: all 0.2s linear;
+      }
+      .active {
+        color: $darker-pink;
+        font-weight: bold;
+      }
+    }
+  }
+  &__price {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+  &__price-title {
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 0.8rem;
+  }
+  &__price__input {
+    width: 80%;
+    border: none;
   }
 }

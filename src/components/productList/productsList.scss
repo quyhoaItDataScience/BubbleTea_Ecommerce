@@ -1,5 +1,14 @@
 .products-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   grid-gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+
+  // New tricks learn from Css Tricks
+  // display: flex;
+  // justify-content: center;
+  // flex: max(400px, 100%/4 + 0.1%);
+  // flex-wrap: wrap;
+  // gap: 1rem;
 }

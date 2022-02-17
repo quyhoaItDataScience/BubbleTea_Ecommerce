@@ -1,0 +1,20 @@
+@use "../../scss/" as *;
+
+.cart-products {
+  flex: 0.7;
+  &__list {
+    @include flex(space-between, center);
+    margin-bottom: 2rem;
+    border-bottom: 4px solid $lighter-pink;
+    padding-bottom: 1rem;
+  }
+  &__item {
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: $darker-pink;
+  }
+  &__btns {
+    @include flex(space-between, center);
+    margin-top: 2rem;
+  }
+}

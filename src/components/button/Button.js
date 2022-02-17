@@ -3,10 +3,18 @@ import "./button.scss";
 
 const Button = (props) => {
   return (
-    <button className={`btn ${props.className}`} onClick={props.onClick}>
+    <button
+      type={props.type}
+      className={`btn ${props.className}`}
+      onClick={props.onClick}
+    >
       {props.children}
     </button>
   );
+};
+
+Button.defaultProps = {
+  type: "button",
 };
 
 export default Button;

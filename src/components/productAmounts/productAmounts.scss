@@ -1,0 +1,28 @@
+@use "../../scss/" as *;
+
+.products-amount {
+  @include flex(center, flex-start);
+  flex-direction: column;
+  margin-left: 3rem;
+  padding: 1rem;
+  gap: 2rem;
+  flex: 0.3;
+  border: 5px solid #a5d8ff;
+  border-radius: 10px;
+  &__title {
+    font-size: 3rem;
+    color: $primary-color;
+    text-transform: capitalize;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid $primary-color;
+    padding: 1rem 0;
+  }
+  &__total-items,
+  &__total-price,
+  &__shipping-fee {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $brown;
+  }
+}

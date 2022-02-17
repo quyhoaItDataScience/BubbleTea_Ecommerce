@@ -1,0 +1,22 @@
+@use "../scss" as *;
+
+.cart {
+  padding: 5rem 0;
+  &__title {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: capitalize;
+    color: $primary-color;
+    margin-bottom: 3rem;
+  }
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 5rem 0;
+    & > *:first-child {
+      border-right: 2px solid $lighter-pink;
+      padding-right: 2rem;
+    }
+  }
+}

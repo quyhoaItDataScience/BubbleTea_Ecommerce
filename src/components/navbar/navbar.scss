@@ -13,6 +13,7 @@
     @include flex(none, center);
   }
   &__logo {
+    flex: 0.2;
     &-text {
       color: $primary-color;
       font-size: 3rem;
@@ -20,7 +21,7 @@
   }
   &__links {
     margin-left: 3.5rem;
-    flex: 1;
+    flex: 0.6;
     @include flex(space-evenly, center);
     &__link {
       color: $brown;
@@ -34,6 +35,32 @@
       &:hover {
         border-bottom: 3px solid $brown;
       }
+    }
+  }
+  &__cart {
+    @include flex(center, center);
+    gap: 1rem;
+    flex: 0.2;
+    &__display {
+      position: relative;
+      &__value {
+        position: absolute;
+        top: -20%;
+        right: -10%;
+        background-color: $darker-pink;
+        color: $white;
+        padding: 0.6rem;
+        width: 20px;
+        height: 20px;
+        font-size: 1.6rem;
+        border-radius: 50%;
+        @include flex(center, center);
+      }
+    }
+    &__icon {
+      font-size: 3.2rem !important;
+      color: $brown;
+      cursor: pointer;
     }
   }
 }

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.scss";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Avatar } from "@mui/material";
 
 const Navbar = () => {
   const nav_data = [
@@ -31,6 +33,15 @@ const Navbar = () => {
               </Link>
             );
           })}
+        </div>
+        <div className="nav__cart">
+          <div className="nav__cart__display">
+            <Link to="/cart">
+              <ShoppingCartIcon className="nav__cart__icon" />
+              <div className="nav__cart__display__value">0</div>
+            </Link>
+          </div>
+          <Avatar src="https://avatars.githubusercontent.com/u/42133389?s=48&v=4" />
         </div>
       </div>
     </nav>
