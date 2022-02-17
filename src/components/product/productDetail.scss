@@ -38,8 +38,13 @@
   }
   &__desc {
     font-size: 1.6rem;
+    font-weight: 500;
     line-height: 1.6;
     color: $brown;
+  }
+  &__btns {
+    @include flex(flex-start, center);
+    gap: 2rem;
   }
   &__categories {
     @include flex(center, center);

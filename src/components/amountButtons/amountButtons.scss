@@ -1,0 +1,27 @@
+@use "../../scss/" as *;
+
+.amount-buttons {
+  @include flex(flex-start, center);
+  gap: 1rem;
+  // transform: translateX(10%);
+  &__increase,
+  &__decrease {
+    @include flex(center, center);
+    color: $white;
+    background-color: $darker-pink;
+    border: none;
+    outline: none;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $darker-pink-2;
+    }
+  }
+  &__amount {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: $brown;
+  }
+}

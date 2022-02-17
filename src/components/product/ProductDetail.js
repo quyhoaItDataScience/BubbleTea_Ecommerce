@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./productDetail.scss";
 import CloseIcon from "@mui/icons-material/Close";
 import Button from "../button/Button";
+import AmountButtons from "../amountButtons/AmountButtons";
+import AddToCart from "../addToCart/AddToCart";
 
 const ProductDetail = ({ id, img, name, price, displayProductDetails }) => {
   return (
@@ -24,8 +26,8 @@ const ProductDetail = ({ id, img, name, price, displayProductDetails }) => {
             bạn.
           </p>
           <div className="product-details__btns">
-            <div>Amount buttons</div>
-            <Button className="btn-add">thêm vào giỏ</Button>
+            <AmountButtons id={id} />
+            <AddToCart id={id} />
           </div>
           <div className="product-details__categories">
             <p>Danh mục</p>

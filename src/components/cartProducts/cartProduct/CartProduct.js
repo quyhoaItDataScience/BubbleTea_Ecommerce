@@ -1,22 +1,29 @@
 import React from "react";
 import "./cartProduct.scss";
 import CloseIcon from "@mui/icons-material/Close";
+import AmountButtons from "../../amountButtons/AmountButtons";
+import { useCartContext } from "../../../context/cart_context";
 
-const CartProduct = () => {
+const CartProduct = ({ cartItem }) => {
+  const { removeItem } = useCartContext();
+  const { id, name, img, price, amount } = cartItem;
+  console.log(price, amount);
+
   return (
     <div className="cart-product">
       <div className="cart-product__info">
-        <CloseIcon className="removeItem-icon" />
-        <img
-          src="http://hb855.giaodienwebsite.top/wp-content/uploads/2019/09/9-400x400.png"
-          alt="cart-product"
-          className="cart-product__info__img"
+        <CloseIcon
+          className="removeItem-icon"
+          id={id}
+          onClick={(e) => removeItem(e)}
         />
-        <div className="cart-product__info__name">Latte bạc hà</div>
+        <img src={img} alt="cart-product" className="cart-product__info__img" />
+        <div className="cart-product__info__name">{name}</div>
       </div>
-      <div className="cart-product__price-item">300vnd</div>
-      <div className="cart-product__total-items">3</div>
-      <div className="cart-product__total-price">400,000vnd</div>
+      <h3 className="cart-product__price-item">{price}</h3>
+      {/* <div className="cart-product__total-items">3</div> */}
+      <AmountButtons id={id} />
+      <div className="cart-product__total-price">{price * amount}</div>
     </div>
   );
 };

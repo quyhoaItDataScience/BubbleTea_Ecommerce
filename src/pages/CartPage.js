@@ -2,6 +2,8 @@ import React from "react";
 import CartProducts from "../components/cartProducts/CartProducts";
 import ProductsAmount from "../components/productAmounts/ProductsAmount";
 import Footer from "../components/footer/Footer";
+import Copyright from "../components/copyright/Copyright";
+
 import "./cartPage.scss";
 
 const CartPage = () => {
@@ -17,6 +19,7 @@ const CartPage = () => {
         {/* Footer */}
       </div>
       <Footer />
+      <Copyright />
     </section>
   );
 };
