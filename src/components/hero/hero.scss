@@ -14,16 +14,26 @@
     transform: translate(-50%, -50%);
     text-align: center;
     max-width: 65rem;
+    @media (max-width: 555px) {
+      width: 90%;
+    }
   }
   &__sub {
     font-size: 3.6rem;
     color: $lighter-pink;
     margin-bottom: 0.5rem;
+    @media (max-width: 555px) {
+      font-size: 2.8rem;
+    }
   }
   &__title {
     font-size: 6rem;
     color: $primary-color;
     margin-bottom: 1rem;
+    @media (max-width: 545px) {
+      font-size: 4rem;
+      margin: 2rem 0;
+    }
   }
   &__desc {
     color: $lighter-pink;

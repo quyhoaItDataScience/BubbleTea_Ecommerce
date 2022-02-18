@@ -7,7 +7,6 @@ import { useCartContext } from "../../../context/cart_context";
 const CartProduct = ({ cartItem }) => {
   const { removeItem } = useCartContext();
   const { id, name, img, price, amount } = cartItem;
-  console.log(price, amount);
 
   return (
     <div className="cart-product">

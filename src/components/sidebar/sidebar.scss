@@ -1,0 +1,44 @@
+@use "../../scss/" as *;
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100vh;
+  background-color: $lighter-pink;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  @include flex(none, center);
+  flex-direction: column;
+  gap: 5rem;
+  padding-top: 10rem;
+
+  &__close-icon {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    color: $white;
+    background-color: $darker-pink;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__link {
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: $brown;
+    &:hover {
+      border-bottom: 3px solid $brown;
+    }
+  }
+}

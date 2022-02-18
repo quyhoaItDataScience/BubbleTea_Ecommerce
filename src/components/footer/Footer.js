@@ -6,7 +6,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer__logo">
-          <h2 className="footer__logo__text">Tà Tưa</h2>
+          <img
+            src="https://cdn-icons.flaticon.com/png/512/6186/premium/6186255.png?token=exp=1645179659~hmac=a385dca7749e51a28837d049953b4df7"
+            alt="logo"
+          />
         </div>
         <div className="footer__company">
           <div className="footer__title">Công ty</div>

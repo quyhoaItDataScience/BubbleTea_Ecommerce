@@ -6,7 +6,6 @@ import { useProductsContext } from "../../context/products_context";
 
 const AmountButtons = ({ id }) => {
   const { products, toggleAmount } = useProductsContext();
-  console.log(id);
   const product = products.find((product) => product.id === id);
   const { amount } = product;
 
@@ -15,7 +14,6 @@ const AmountButtons = ({ id }) => {
   };
 
   const decreaseAmount = () => {
-    console.log("toggle amount");
     toggleAmount(id, "dec");
   };
 

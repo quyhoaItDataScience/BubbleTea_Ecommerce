@@ -4,7 +4,7 @@ const cart_reducer = (state, action) => {
       const { id, product } = action.payload;
       let tempCart = state.cart.find((item) => item.id === id);
       if (tempCart) {
-        console.log("already have");
+        return { ...state };
       } else {
         let newItem = {
           id: id,
@@ -15,7 +15,40 @@ const cart_reducer = (state, action) => {
         };
         return { ...state, cart: [...state.cart, newItem] };
       }
-      break;
+    case "UPDATE_CART_ITEM_AMOUNT": {
+      console.log(action.payload);
+      const existingCartItem = state.cart;
+      existingCartItem.every((cartItem) => {
+        action.payload.every((product) => {
+          if (product.id === cartItem.id) {
+            cartItem.amount = product.amount;
+          }
+          return product;
+        });
+        return cartItem;
+      });
+      console.log(existingCartItem);
+      // I don't understand why my cartItemAmount changed when I don't return the new state
+      return { ...state, cart: existingCartItem };
+    }
+
+    case "COUNT_TOTAL":
+      const tempCartForCount = [...state.cart];
+
+      const { total_items, total_price } = tempCartForCount.reduce(
+        (total, cartItem) => {
+          total.total_items += cartItem.amount;
+          total.total_price += cartItem.amount * cartItem.price;
+          return total;
+        },
+        {
+          total_items: 0,
+          total_price: 0,
+        }
+      );
+
+      return { ...state, total_items: total_items, total_price: total_price };
+
     case "CLEAR_CART":
       return { ...state, cart: [] };
     case "REMOVE_ITEM": {

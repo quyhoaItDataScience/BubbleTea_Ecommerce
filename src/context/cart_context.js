@@ -2,8 +2,13 @@ import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducer/cart_reducer";
 import { useProductsContext } from "./products_context";
 
+const getLocalStorage = () => {
+  let cart = localStorage.getItem("cart");
+  return cart ? JSON.parse(localStorage.getItem("cart")) : [];
+};
+
 const initialState = {
-  cart: [],
+  cart: getLocalStorage(),
   total_items: 0,
   total_price: 0,
 };
@@ -18,7 +23,6 @@ export const CartProvider = ({ children }) => {
   const addToCart = (e) => {
     const id = Number(e.target.value);
     const product = products.find((item) => item.id === id);
-
     dispatch({ type: "ADD_TO_CART", payload: { id, product } });
   };
 
@@ -29,21 +33,27 @@ export const CartProvider = ({ children }) => {
   };
 
   // toggle amount
-  const toggleAmount = (id) => {
-    dispatch({ type: "TOGGLE_AMOUNT", payload: id });
-  };
 
   // clear cart
   const clearCart = () => {
     dispatch({ type: "CLEAR_CART" });
+    localStorage.removeItem("cart");
   };
+
+  // Update cart amount when product amount change
   useEffect(() => {
+    dispatch({ type: "UPDATE_CART_ITEM_AMOUNT", payload: products });
     dispatch({ type: "COUNT_TOTAL" });
-  }, [state]);
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [products, state.cart]);
+
+  // useEffect(() => {
+  //   dispatch({ type: "COUNT_TOTAL" });
+  // }, [state.cart]);
 
   return (
     <CartContext.Provider
-      value={{ ...state, addToCart, removeItem, toggleAmount, clearCart }}
+      value={{ ...state, addToCart, removeItem, clearCart }}
     >
       {children}
     </CartContext.Provider>

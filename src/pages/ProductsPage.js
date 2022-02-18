@@ -19,10 +19,10 @@ const ProductsPage = () => {
         {/* Products component */}
         {/* Footer */}
       </div>
-      <div>
+      <>
         <Footer />
         <Copyright />
-      </div>
+      </>
     </section>
   );
 };
